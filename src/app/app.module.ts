@@ -8,6 +8,16 @@ import {HomepageModule} from './pages/homepage';
 import {FooterModule } from './shared/footer/footer';
 import {NavBarModule} from './shared/navbar';
 import {SvgViewerModule} from './shared/svg-viewer/svg-viewer';
+import {DocumentationItems} from './shared/documentation-items/documentation-items';
+
+import {ComponentListModule} from './pages/component-list';
+import {ComponentViewerModule} from './pages/component-viewer/component-viewer';
+import {ComponentCategoryListModule} from './pages/component-category-list/component-category-list';
+import {ComponentSidenavModule} from './pages/component-sidenav/component-sidenav';
+import {ComponentPageTitle} from './pages/page-title/page-title';
+import {ComponentHeaderModule} from './pages/component-page-header/component-page-header';
+import {DocViewerModule} from './shared/doc-viewer/doc-viewer-module';
+
 
 @NgModule({
   declarations: [
@@ -20,8 +30,17 @@ import {SvgViewerModule} from './shared/svg-viewer/svg-viewer';
     NavBarModule,
     FooterModule,
     SvgViewerModule,
+    ComponentCategoryListModule,
+    ComponentHeaderModule,
+    ComponentListModule,
+    ComponentSidenavModule,
+    ComponentViewerModule,
+    DocViewerModule,
   ],
-  providers: [],
+  providers: [
+    DocumentationItems,
+    ComponentPageTitle,
+  ],
   bootstrap: [KagidocsApp]
 })
 export class AppModule { }

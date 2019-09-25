@@ -7,6 +7,12 @@
 @import './styles/svg-theme';
 @import './styles/tables-theme';
 
+@import './app/pages/component-category-list/component-category-list-theme';
+@import './app/pages/component-list/component-list-theme';
+@import './app/pages/component-sidenav/component-sidenav-theme';
+@import './app/pages/component-viewer/component-viewer-theme';
+@import './app/shared/example-viewer/example-viewer-theme';
+@import './app/shared/table-of-contents/table-of-contents-theme';
 
 // Styles for the docs app that are based on the current theme.
 @mixin kagidocs-app-theme($theme) {

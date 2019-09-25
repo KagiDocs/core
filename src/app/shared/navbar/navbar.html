@@ -1,12 +1,23 @@
-<!-- TODO: figure out if the <nav> should go inside of a <header> element. -->
 <nav class="docs-navbar-header">
+  <!--
   <a mat-button class="docs-button" routerLink="/" aria-label="Angular Material">
     <img class="docs-angular-logo"
          src="../../../assets/img/homepage/angular-white-transparent.svg"
          alt="angular">
-    <span>Material</span>
+    <span>KagiDocs</span>
+  </a>
+  -->
+  <a mat-button class="docs-button" routerLink="/" aria-label="Angular Material">
+    <img class="docs-angular-logo">
+    <span>KagiDocs</span>
   </a>
 
+  <!-- Main Menu -->
+  <a mat-button class="docs-navbar-hide-small docs-button"
+  *ngFor="let key of sectionKeys"
+  [routerLink]="key">{{sections[key].name}}</a>
+
+  <!-- Right header -->
   <div class="flex-spacer"></div>
   <a mat-button class="docs-button docs-navbar-hide-small" href="https://github.com/angular/material2"
      aria-label="GitHub Repository">
