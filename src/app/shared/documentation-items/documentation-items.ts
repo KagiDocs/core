@@ -24,7 +24,7 @@ const CDK = 'cdk';
 const COMPONENTS = 'components';
 export const SECTIONS: {[key: string]: DocSection} = {
   [COMPONENTS]: {
-    name: 'Components',
+    name: 'Docs',
     summary: 'Angular Material comprises a range of components which implement common ' +
     'interaction patterns according to the Material Design specification.'
   },
@@ -156,7 +156,7 @@ const DOCS: {[key: string]: DocCategory[]} = {
     },
     {
       id: 'nav',
-      name: 'Navigation',
+      name: 'Content',
       summary: 'Menus, sidenavs and toolbars that organise your content.',
       items: [
         {
@@ -262,148 +262,7 @@ const DOCS: {[key: string]: DocCategory[]} = {
           'tree-loadmore',
         ]},
       ]
-    },
-    {
-      id: 'buttons',
-      name: 'Buttons & Indicators',
-      summary: 'Buttons, toggles, status and progress indicators.',
-      items: [
-        {
-          id: 'button',
-          name: 'Button',
-          summary: 'An interactive button with a range of presentation options.',
-          examples: ['button-types']},
-        {
-          id: 'button-toggle',
-          name: 'Button toggle',
-          summary: 'A groupable on/off toggle for enabling and disabling options.',
-          examples: ['button-toggle-exclusive']
-        },
-        {
-          id: 'badge',
-          name: 'Badge',
-          summary: 'A small value indicator that can be overlaid on another object.',
-          examples: ['badge-overview']
-        },
-        {
-          id: 'chips',
-          name: 'Chips',
-          summary: 'Presents a list of items as a set of small, tactile entities.',
-          examples: [
-            'chips-overview',
-            'chips-autocomplete',
-            'chips-input',
-            'chips-stacked',
-          ]
-        },
-        {
-          id: 'icon',
-          name: 'Icon',
-          summary: 'Renders a specified icon.',
-          examples: ['icon-svg']
-        },
-        {
-          id: 'progress-spinner',
-          name: 'Progress spinner',
-          summary: 'A circular progress indicator.',
-          examples: ['progress-spinner-configurable']
-        },
-        {
-          id: 'progress-bar',
-          name: 'Progress bar',
-          summary: 'A linear progress indicator.',
-          examples: ['progress-bar-configurable']
-        },
-        {
-          id: 'ripple',
-          name: 'Ripples',
-          summary: 'Directive for adding Material Design ripple effects',
-          examples: ['ripple-overview']
-        }
-      ]
-    },
-    {
-      id: 'modals',
-      name: 'Popups & Modals',
-      summary: 'Floating components that can be dynamically shown or hidden.',
-      items: [
-        {
-          id: 'bottom-sheet',
-          name: 'Bottom Sheet',
-          summary: 'A large interactive panel primarily for mobile devices.',
-          examples: ['bottom-sheet-overview']
-        },
-        {
-          id: 'dialog',
-          name: 'Dialog',
-          summary: 'A configurable modal that displays dynamic content.',
-          examples: ['dialog-overview']
-        },
-        {
-          id: 'snack-bar',
-          name: 'Snackbar',
-          summary: 'Displays short actionable messages as an uninvasive alert.',
-          examples: ['snack-bar-component']
-        },
-        {
-          id: 'tooltip',
-          name: 'Tooltip',
-          summary: 'Displays floating content when an object is hovered.',
-          examples: [
-            'tooltip-overview',
-            'tooltip-position',
-            'tooltip-custom-class',
-            'tooltip-delay',
-            'tooltip-disabled',
-            'tooltip-manual',
-            'tooltip-message',
-            'tooltip-modified-defaults',
-            'tooltip-auto-hide',
-          ]
-        },
-      ]
-    },
-    {
-      id: 'tables',
-      name: 'Data table',
-      summary: 'Tools for displaying and interacting with tabular data.',
-      items: [
-        {
-          id: 'paginator',
-          name: 'Paginator',
-          summary: 'Controls for displaying paged data.',
-          examples: ['paginator-configurable']
-        },
-        {
-          id: 'sort',
-          name: 'Sort header',
-          summary: 'Allows the user to configure how tabular data is sorted.',
-          examples: ['sort-overview']
-        },
-        {
-          id: 'table',
-          name: 'Table',
-          summary: 'A configurable component for displaying tabular data.',
-          examples: [
-            'table-basic',
-            'table-basic-flex',
-            'table-dynamic-columns',
-            'table-expandable-rows',
-            'table-filtering',
-            'table-footer-row',
-            'table-http',
-            'table-multiple-header-footer',
-            'table-overview',
-            'table-pagination',
-            'table-row-context',
-            'table-selection',
-            'table-sorting',
-            'table-sticky-columns',
-            'table-sticky-footer',
-            'table-sticky-header',
-        ]},
-      ]
-    }
+    }    
   ],
   [CDK] : [
     {

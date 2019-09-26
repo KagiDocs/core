@@ -17,7 +17,7 @@ import {ComponentSidenavModule} from './pages/component-sidenav/component-sidena
 import {ComponentPageTitle} from './pages/page-title/page-title';
 import {ComponentHeaderModule} from './pages/component-page-header/component-page-header';
 import {DocViewerModule} from './shared/doc-viewer/doc-viewer-module';
-
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -36,6 +36,7 @@ import {DocViewerModule} from './shared/doc-viewer/doc-viewer-module';
     ComponentSidenavModule,
     ComponentViewerModule,
     DocViewerModule,
+    HttpClientModule,
   ],
   providers: [
     DocumentationItems,
