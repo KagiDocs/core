@@ -19,6 +19,7 @@
     "@angular/core": "^8.0.0",
     "@angular/forms": "^8.0.0",
     "@angular/material": "^8.1.4",
+    "@angular/material-examples": "angular/material2-docs-content#8.0.x",
     "@angular/material-experimental": "^8.1.1",
     "@angular/material-moment-adapter": "^8.1.4",
     "@angular/platform-browser": "^8.0.0",
@@ -33,7 +34,6 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.800.0",
-    "@angular/material-examples": "angular/material2-docs-content#8.1.x",
     "@angular/cli": "^8.0.0",
     "@angular/compiler-cli": "^8.0.0",
     "@types/jasmine": "^3.3.5",
