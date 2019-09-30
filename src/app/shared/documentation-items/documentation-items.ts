@@ -24,7 +24,7 @@ const CDK = 'cdk';
 const COMPONENTS = 'components';
 export const SECTIONS: {[key: string]: DocSection} = {
   [COMPONENTS]: {
-    name: 'Docs',
+    name: 'Components',
     summary: 'Angular Material comprises a range of components which implement common ' +
     'interaction patterns according to the Material Design specification.'
   },
@@ -156,7 +156,7 @@ const DOCS: {[key: string]: DocCategory[]} = {
     },
     {
       id: 'nav',
-      name: 'Content',
+      name: 'Navigation',
       summary: 'Menus, sidenavs and toolbars that organise your content.',
       items: [
         {
@@ -262,7 +262,67 @@ const DOCS: {[key: string]: DocCategory[]} = {
           'tree-loadmore',
         ]},
       ]
-    }    
+    },
+    {
+      id: 'buttons',
+      name: 'Buttons & Indicators',
+      summary: 'Buttons, toggles, status and progress indicators.',
+      items: [
+        {
+          id: 'button',
+          name: 'Button',
+          summary: 'An interactive button with a range of presentation options.',
+          examples: ['button-types']},
+        {
+          id: 'button-toggle',
+          name: 'Button toggle',
+          summary: 'A groupable on/off toggle for enabling and disabling options.',
+          examples: ['button-toggle-exclusive']
+        },
+        {
+          id: 'badge',
+          name: 'Badge',
+          summary: 'A small value indicator that can be overlaid on another object.',
+          examples: ['badge-overview']
+        },
+        {
+          id: 'chips',
+          name: 'Chips',
+          summary: 'Presents a list of items as a set of small, tactile entities.',
+          examples: [
+            'chips-overview',
+            'chips-autocomplete',
+            'chips-input',
+            'chips-stacked',
+          ]
+        },
+        {
+          id: 'icon',
+          name: 'Icon',
+          summary: 'Renders a specified icon.',
+          examples: ['icon-svg']
+        },
+        {
+          id: 'progress-spinner',
+          name: 'Progress spinner',
+          summary: 'A circular progress indicator.',
+          examples: ['progress-spinner-configurable']
+        },
+        {
+          id: 'progress-bar',
+          name: 'Progress bar',
+          summary: 'A linear progress indicator.',
+          examples: ['progress-bar-configurable']
+        },
+        {
+          id: 'ripple',
+          name: 'Ripples',
+          summary: 'Directive for adding Material Design ripple effects',
+          examples: ['ripple-overview']
+        }
+      ]
+    },
+
   ],
   [CDK] : [
     {
@@ -287,14 +347,22 @@ const DOCS: {[key: string]: DocCategory[]} = {
           name: 'Drag and Drop',
           summary: 'Directives enabling drag-and-drop interactions',
           examples: [
-            'cdk-drag-drop-axis-lock',
-            'cdk-drag-drop-sorting',
             'cdk-drag-drop-overview',
-            'cdk-drag-drop-horizontal-sorting',
-            'cdk-drag-drop-custom-preview',
-            'cdk-drag-drop-root-element',
-            'cdk-drag-drop-handle',
+            'cdk-drag-drop-axis-lock',
+            'cdk-drag-drop-boundary',
             'cdk-drag-drop-connected-sorting',
+            'cdk-drag-drop-connected-sorting-group',
+            'cdk-drag-drop-custom-placeholder',
+            'cdk-drag-drop-custom-preview',
+            'cdk-drag-drop-delay',
+            'cdk-drag-drop-disabled',
+            'cdk-drag-drop-disabled-sorting',
+            'cdk-drag-drop-enter-predicate',
+            'cdk-drag-drop-free-drag-position',
+            'cdk-drag-drop-handle',
+            'cdk-drag-drop-horizontal-sorting',
+            'cdk-drag-drop-root-element',
+            'cdk-drag-drop-sorting'
           ],
         },
         {
@@ -351,7 +419,14 @@ const DOCS: {[key: string]: DocCategory[]} = {
         {id: 'stepper',
           name: 'Stepper',
           summary: 'Presents content as steps through which to progress.',
-          examples: []
+          examples: [
+            'stepper-vertical',
+            'stepper-editable',
+            'stepper-optional',
+            'stepper-errors',
+            'stepper-label-position-bottom',
+            'stepper-states'
+          ]
         },
         {
           id: 'table',
@@ -387,8 +462,9 @@ for (let category of DOCS[CDK]) {
 }
 
 const ALL_COMPONENTS = DOCS[COMPONENTS].reduce(
-  (result, category) => result.concat(category.items), []);
-const ALL_CDK = DOCS[CDK].reduce((result, cdk) => result.concat(cdk.items), []);
+  (result: DocItem[], category: DocCategory) => result.concat(category.items), []);
+const ALL_CDK = DOCS[CDK].reduce(
+  (result: DocItem[], cdk: DocCategory) => result.concat(cdk.items), []);
 const ALL_DOCS = ALL_COMPONENTS.concat(ALL_CDK);
 const ALL_CATEGORIES = DOCS[COMPONENTS].concat(DOCS[CDK]);
 
@@ -408,12 +484,12 @@ export class DocumentationItems {
     return [];
   }
 
-  getItemById(id: string, section: string): DocItem {
+  getItemById(id: string, section: string): DocItem | undefined {
     const sectionLookup = section == 'cdk' ? 'cdk' : 'material';
     return ALL_DOCS.find(doc => doc.id === id && doc.packageName == sectionLookup);
   }
 
-  getCategoryById(id: string): DocCategory {
+  getCategoryById(id: string): DocCategory | undefined {
     return ALL_CATEGORIES.find(c => c.id == id);
   }
 }

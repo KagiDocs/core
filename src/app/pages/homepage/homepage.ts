@@ -1,8 +1,9 @@
-import { Component, NgModule, OnInit } from '@angular/core';
-import {RouterModule} from '@angular/router';
-import {FooterModule} from '../../shared/footer/footer';
+import {Component, NgModule, OnInit} from '@angular/core';
 import {SvgViewerModule} from '../../shared/svg-viewer/svg-viewer';
-import {MatButtonModule} from '@angular/material';
+import {MatButtonModule} from '@angular/material/button';
+import {FooterModule} from '../../shared/footer/footer';
+import {RouterModule} from '@angular/router';
+import {ComponentPageTitle} from '../page-title/page-title';
 
 @Component({
   selector: 'app-homepage',
@@ -10,10 +11,12 @@ import {MatButtonModule} from '@angular/material';
   styleUrls: ['./homepage.scss']
 })
 export class Homepage implements OnInit {
+  isNextVersion = location.hostname.startsWith('next.material.angular.io');
 
-  constructor() { }
+  constructor(public _componentPageTitle: ComponentPageTitle) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this._componentPageTitle.title = '';
   }
 }
 

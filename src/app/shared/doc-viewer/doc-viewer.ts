@@ -78,7 +78,7 @@ export class DocViewer implements OnDestroy {
     this._elementRef.nativeElement.innerHTML = rawDocument;
     this.textContent = this._elementRef.nativeElement.textContent;
 
-    this._loadComponents('material-docs-example', ExampleViewer);
+    this._loadComponents('kagidocs-example', ExampleViewer);
     this._loadComponents('header-link', HeaderLink);
 
     // Resolving and creating components dynamically in Angular happens synchronously, but since
@@ -107,7 +107,9 @@ export class DocViewer implements OnDestroy {
           element, this._componentFactoryResolver, this._appRef, this._injector);
       let examplePortal = new ComponentPortal(componentClass, this._viewContainerRef);
       let exampleViewer = portalHost.attach(examplePortal);
-      (exampleViewer.instance as ExampleViewer).example = example;
+      if (example !== null) {
+        (exampleViewer.instance as ExampleViewer).example = example;
+      }
 
       this._portalHosts.push(portalHost);
     });

@@ -2,7 +2,8 @@ import {
   Component, Input, NgZone, ViewEncapsulation, ViewChild, OnInit, NgModule, OnDestroy
 } from '@angular/core';
 import {DocumentationItems} from '../../shared/documentation-items/documentation-items';
-import {MatSidenav, MatSidenavModule, MatIconModule} from '@angular/material';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSidenav, MatSidenavModule} from '@angular/material/sidenav';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ActivatedRoute, Params, Router, RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
@@ -59,7 +60,7 @@ export class ComponentSidenav implements OnInit {
 export class ComponentNav implements OnInit, OnDestroy {
 
   @Input() params: Observable<Params>;
-  expansions = {};
+  expansions: {[key: string]: boolean} = {};
   private _onDestroy = new Subject<void>();
 
   constructor(public docItems: DocumentationItems,
@@ -82,7 +83,7 @@ export class ComponentNav implements OnInit, OnDestroy {
   setExpansions(params: Params) {
     const categories = this.docItems.getCategories(params.section);
     for (const category of (categories || [])) {
-      if (this.expansions[category.id] === true) {
+      if (this.expansions[category.id]) {
         continue;
       }
 
@@ -94,7 +95,7 @@ export class ComponentNav implements OnInit, OnDestroy {
         }
       }
 
-      if (this.expansions[category.id] === false) {
+      if (!this.expansions[category.id]) {
         this.expansions[category.id] = match;
       }
     }

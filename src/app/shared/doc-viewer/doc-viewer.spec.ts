@@ -106,11 +106,11 @@ class DocViewerTestComponent {
   documentUrl = 'http://material.angular.io/simple-doc.html';
 }
 
-const FAKE_DOCS = {
+const FAKE_DOCS: {[key: string]: string} = {
   'http://material.angular.io/simple-doc.html': '<div>my docs page</div>',
   'http://material.angular.io/doc-with-example.html': `
       <div>Check out this example:</div>
-      <div material-docs-example="some-example"></div>`,
+      <div kagidocs-example="some-example"></div>`,
   'http://material.angular.io/doc-with-links.html': `<a href="#test">Test link</a>`,
   'http://material.angular.io/doc-with-element-ids.html': `<h4 id="my-header">Header</h4>`,
 };

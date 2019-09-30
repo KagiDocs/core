@@ -1,24 +1,22 @@
-<footer class="docs-footer">
+<footer class="docs-footer"
+        [class.is-next-version]="isNextVersion">
   <div class="docs-footer-list">
     <div class="docs-footer-logo">
       <div class="footer-logo">
-        
         <!-- <img class="docs-footer-angular-logo"
           src="../../../assets/img/homepage/angular-white-transparent.svg"
-          alt="angular">
-        -->
-
-        <span><a href="https://angular.io">Learn KagiDocs</a></span>
+          alt="angular"> -->
+        <span><a href="https://kagidocs.io">Learn KagiDocs</a></span>
       </div>
     </div>
 
     <div class="docs-footer-version">
-      <span class="version">Current Version</span>
+      <span class="version">Current Version: {{version}}</span>
     </div>
 
     <div class="docs-footer-copyright">
-      <span>Designed & Developed by KagiDocs ©2019.</span>
-      <span>Code licensed under an MIT-style License.</span>
+      <span>Designed & Developed by KagiDocs ©2010-2019.</span>
+      <a href="https://github.com/angular/components/blob/master/LICENSE">Code licensed under an MIT-style License.</a>
       <span>Documentation licensed under CC BY 4.0.</span>
     </div>
   </div>

@@ -1,13 +1,21 @@
 {
-  "name": "core",
+  "name": "material-angular-io",
   "version": "0.0.0",
+  "license": "MIT",
+  "angular-cli": {},
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "start": "yarn build-themes && ng serve",
+    "start-jit": "yarn build-themes && ng serve --aot=false",
+    "lint": "tslint -p src/tsconfig.json",
+    "test": "yarn build-themes && ng test",
+    "pree2e": "webdriver-manager update",
+    "e2e": "protractor",
+    "build-themes": "bash ./tools/build-themes.sh",
+    "prod-build": "yarn build-themes && ng build --aot --prod",
+    "postinstall": "webdriver-manager update --gecko false && yarn build-themes",
+    "publish-prod": "bash ./tools/deploy.sh stable prod",
+    "publish-dev": "bash ./tools/deploy.sh",
+    "publish-beta": "bash ./tools/deploy.sh stable beta"
   },
   "private": true,
   "dependencies": {

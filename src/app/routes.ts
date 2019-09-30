@@ -1,7 +1,7 @@
-import { Routes } from '@angular/router';
 import {Homepage} from './pages/homepage';
-
 import {ComponentList} from './pages/component-list';
+import {GuideList} from './pages/guide-list';
+import {Routes} from '@angular/router';
 import {
   ComponentApi,
   ComponentExamples,
@@ -10,12 +10,22 @@ import {
 } from './pages/component-viewer/component-viewer';
 import {ComponentCategoryList} from './pages/component-category-list/component-category-list';
 import {ComponentSidenav} from './pages/component-sidenav/component-sidenav';
+import {
+  CanActivateComponentSidenav
+} from './pages/component-sidenav/component-sidenav-can-load-guard';
+import {GuideViewer} from './pages/guide-viewer/guide-viewer';
 
 export const KAGIDOCS_ROUTES: Routes = [
   {path: '', component: Homepage, pathMatch: 'full', data: {}},
   {path: 'categories', redirectTo: '/components/categories'},
+  {path: 'guides', component: GuideList, data: {}},
+  // Since https://github.com/angular/components/pull/9574, the cdk-table guide became the overview
+  // document for the cdk table. To avoid any dead / broken links, we redirect to the new location.
+  {path: 'guide/cdk-table', redirectTo: '/cdk/table/overview'},
+  {path: 'guide/:id', component: GuideViewer, data: {}},
   {
     path: ':section',
+    canActivate: [CanActivateComponentSidenav],
     component: ComponentSidenav,
     children: [
       {path: '', redirectTo: 'categories', pathMatch: 'full'},
