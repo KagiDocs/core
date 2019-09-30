@@ -1,5 +1,4 @@
 import {Component, NgModule} from '@angular/core';
-//import {materialVersion} from '../version/version';
 
 @Component({
   selector: 'app-footer',
@@ -7,10 +6,6 @@ import {Component, NgModule} from '@angular/core';
   styleUrls: ['./footer.scss']
 })
 export class Footer {
-  //isNextVersion = location.hostname.startsWith('next.material.angular.io');
-
-  //version = materialVersion;
-  version = "1.0";
 }
 
 

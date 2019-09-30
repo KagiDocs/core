@@ -20,7 +20,6 @@ import {ComponentHeaderModule} from './pages/component-page-header/component-pag
 import {StyleManager} from './shared/style-manager';
 import {SvgViewerModule} from './shared/svg-viewer/svg-viewer';
 import {ThemePickerModule} from './shared/theme-picker';
-import {StackblitzButtonModule} from './shared/stackblitz';
 import {NavBarModule} from './shared/navbar';
 import {ThemeStorage} from './shared/theme-picker/theme-storage/theme-storage';
 import {GuideItems} from './shared/guide-items/guide-items';
@@ -54,7 +53,6 @@ import {GaService} from './shared/ga/ga';
     GuideViewerModule,
     HomepageModule,
     NavBarModule,
-    StackblitzButtonModule,
     SvgViewerModule,
     ThemePickerModule,
   ],

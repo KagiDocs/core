@@ -1,5 +1,5 @@
 export const environment = {
-  matGaId: 'UA-8594346-24', // Production id
-  ngGaId: 'UA-8594346-15', // Production id
+  matGaId: '', // Production id
+  ngGaId: '', // Production id
   production: true,
 };
